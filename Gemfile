@@ -13,6 +13,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
+gem 'popper', '~> 0.4.0'
+gem 'holder_rails', '>= 2.9.3'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
