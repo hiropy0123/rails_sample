@@ -6,13 +6,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item <%= controller.action_name == "home" ? "active" : "" %>">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item <%= controller.action_name == "about" ? "active" : "" %>">
           <%= link_to "About", static_pages_about_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item <%= controller.action_name == "help" ? "active" : "" %>">
           <%= link_to "Help", static_pages_help_path, class: "nav-link" %>
         </li>
       </ul>
