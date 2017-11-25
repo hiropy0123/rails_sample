@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if yield(:title) === "Home" %>
     <title>My Rails Sample App</title>
+    <% else %>
+    <title><%= yield(:title) %> | My Rails Sample App</title>
+    <% end %>
     <meta name="robots" content="noindex,nofollow"></meta>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
