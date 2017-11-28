@@ -10,13 +10,13 @@
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item <%= controller.action_name == "about" ? "active" : "" %>">
-          <%= link_to "About", static_pages_about_path, class: "nav-link" %>
+          <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item <%= controller.action_name == "help" ? "active" : "" %>">
-          <%= link_to "Help", static_pages_help_path, class: "nav-link" %>
+          <%= link_to "Help", help_path, class: "nav-link" %>
         </li>
         <li class="nav-item <%= controller.action_name == "contact" ? "active" : "" %>">
-          <%= link_to "Contact", static_pages_contact_path, class: "nav-link" %>
+          <%= link_to "Contact", contact_path, class: "nav-link" %>
         </li>
       </ul>
       <form class="form-inline mt-2 mt-md-0">
