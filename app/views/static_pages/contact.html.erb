@@ -1,0 +1,49 @@
+<% provide(:title, "Contact") %>
+<%= render 'header' %>
+
+
+
+
+<div class="container">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">Contact</h1>
+          <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <form action="">
+          <div class="form-group row">
+            <label for="your_name" class="col-3 col-form-label">お名前</label>
+            <div class="col-9">
+              <input class="form-control" type="text" value="例）山田太郎" id="your_name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-3 col-form-label">メールアドレス</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="contact" class="col-sm-3 col-form-label">お問い合わせ内容</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" id="contact" placeholder=""></textarea>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button type="submit" class="btn btn-primary">送 信</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+</div>
+
+<%= render 'footer' %>
