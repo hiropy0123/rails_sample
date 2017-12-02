@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # transform email address to downcase
+  before_save { email.downcase! }
 
   # name, email 入力必須 最大長
   validates(:name, presence: true, length: {maximum: 50})
