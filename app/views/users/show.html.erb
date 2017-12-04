@@ -1,8 +1,11 @@
-<% provide(:title, "ユーザー") %>
+<% provide(:title, @user.name) %>
 <%= render 'header' %>
 
 
 <div class="container">
+  <figure class="avatar">
+    <%= gravatar_for @user %>
+  </figure>
   <table class="table table-striped">
   <thead>
     <tr>
