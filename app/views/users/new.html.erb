@@ -14,6 +14,8 @@
       <div class="container">
         <%= form_for(@user) do |f| %>
 
+        <%= render "shared/error_messages" %>
+
 
           <div class="form-group row">
             <%= f.label :name, "お名前", class: "col-3 col-form-label" %>
