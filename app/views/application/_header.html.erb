@@ -26,6 +26,7 @@
             <% if logged_in? %>
             <%= link_to "Profile", current_user, class: "dropdown-item" %>
             <%= link_to "Settings", '#', class: "dropdown-item" %>
+            <div class="divider"></div>
             <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
             <% else %>
             <%= link_to "Sign in", signup_path, class: "dropdown-item" %>
