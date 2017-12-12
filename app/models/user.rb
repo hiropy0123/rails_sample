@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   # transform email address to downcase
   before_save { email.downcase! }
 
@@ -25,6 +27,23 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
     BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  # ランダムなトークンを返す
+  # SecureRandomはRubyの乱数生成機能
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  # 永続セッションのためにユーザーをデータベースに記憶する
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  # トークンがダイジェストと一致したらtrueを返す
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
 end
