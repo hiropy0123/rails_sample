@@ -22,17 +22,20 @@ class User < ApplicationRecord
             length: {minimum: 6}
 
 
-  # 渡された文字列のハッシュ値を返す
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-    BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-  end
+  # クラスメソッドを使って、selfにdigestとnew_tokenメソッドを定義
+  class << self
+    # 渡された文字列のハッシュ値を返す
+    def digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+      BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
 
-  # ランダムなトークンを返す
-  # SecureRandomはRubyの乱数生成機能
-  def User.new_token
-    SecureRandom.urlsafe_base64
+    # ランダムなトークンを返す
+    # SecureRandomはRubyの乱数生成機能
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
   end
 
   # 永続セッションのためにユーザーをデータベースに記憶する
