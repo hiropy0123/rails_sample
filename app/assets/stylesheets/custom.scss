@@ -1,5 +1,23 @@
+footer {
+  margin-top: 80px;
+}
+
 
 #error_explanation {
   color: red;
-  
+
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 12px;
+    border-bottom: 1px solid #efefef;
+    img {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
 }

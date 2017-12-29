@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  # ログインユーザーに :edit と :update のコントロール権限を与える
-  before_action :logged_in_user, only:[:edit, :update]
+
+  before_action :logged_in_user, only:[:index, :edit, :update]
   # 正しいユーザーに :edit と :update のコントロール権限を与える
   before_action :correct_user, only:[:edit, :update]
 
@@ -35,9 +35,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
   end
+
 
   private
   # ここから下はprivateの領域 ------------------------------------

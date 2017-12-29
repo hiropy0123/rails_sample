@@ -18,6 +18,11 @@
         <li class="nav-item <%= controller.action_name == "contact" ? "active" : "" %>">
           <%= link_to "Contact", contact_path, class: "nav-link" %>
         </li>
+        <% if logged_in? %>
+        <li class="nav-item ">
+          <%= link_to "Users", users_path, class: "nav-link" %>
+        </li>
+        <% end %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Accounts

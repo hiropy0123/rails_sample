@@ -1,0 +1,15 @@
+<% provide(:title, 'ユーザー一覧') %>
+
+<div class="container">
+  <div class="col-sm-8 offset-sm-2">
+    <h1>すべてのユーザー</h1>
+    <ul class="users list-group">
+      <% @users.each do |user| %>
+      <li class="list-group-item">
+        <%= gravatar_for user, size: 50 %>
+        <%= link_to user.name, user %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
