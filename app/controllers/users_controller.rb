@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # ログインユーザーに :edit と :update のコントロール権限を与える
   before_action :logged_in_user, only:[:edit, :update]
+  # 正しいユーザーに :edit と :update のコントロール権限を与える
+  before_action :correct_user, only:[:edit, :update]
 
   def new
     @user = User.new
@@ -50,6 +52,13 @@ class UsersController < ApplicationController
         flash[:danger] = "ログインしてください"
         redirect_to login_url
       end
+    end
+
+    # 正しいユーザーかどうか確認（他人のユーザー情報を操作させない）
+    def correct_user
+      @user = User.find(params[:id])
+      # 正しいユーザー以外のURLにアクセスしたら、トップページにリダイレクト
+      redirect_to root_url unless current_user?(@user)
     end
 
 
