@@ -3,6 +3,7 @@
 <div class="container">
   <div class="col-sm-8 offset-sm-2">
     <h1>すべてのユーザー</h1>
+    <%= will_paginate %>
     <ul class="users list-group">
       <% @users.each do |user| %>
       <li class="list-group-item">
@@ -11,5 +12,6 @@
       </li>
       <% end %>
     </ul>
+    <%= will_paginate %>
   </div>
 </div>

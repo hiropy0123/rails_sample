@@ -18,6 +18,8 @@ gem 'holder_rails', '>= 2.9.3'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '>= 3.1.11'
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
