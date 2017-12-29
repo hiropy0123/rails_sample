@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # ログインユーザーに :edit と :update のコントロール権限を与える
+  before_action :logged_in_user, only:[:edit, :update]
 
   def new
     @user = User.new
@@ -36,9 +38,18 @@ class UsersController < ApplicationController
   end
 
   private
+  # ここから下はprivateの領域 ------------------------------------
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    # ログイン済みユーザーかどうか確認
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "ログインしてください"
+        redirect_to login_url
+      end
     end
 
 
