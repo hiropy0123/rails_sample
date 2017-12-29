@@ -7,19 +7,20 @@ class User < ApplicationRecord
   # name, email 入力必須 最大長
   validates :name,
             presence: true,
-            length: {maximum: 50}
+            length: {maximum: 50, allow_blank: true}
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email,
             presence: true,
-            length: {maximum: 128},
-            format: {with: VALID_EMAIL_REGEX},
-            uniqueness: {case_sensitive: false}
+            length: {maximum: 128, allow_blank: true},
+            format: {with: VALID_EMAIL_REGEX, allow_blank: true},
+            uniqueness: {case_sensitive: false, allow_blank: true}
 
   has_secure_password
   validates :password,
             presence:true,
-            length: {minimum: 6}
+            length: {minimum: 6, allow_blank: true},
+            allow_nil: true
 
 
   # クラスメソッドを使って、selfにdigestとnew_tokenメソッドを定義

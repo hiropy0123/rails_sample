@@ -1,2 +1,23 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<% provide(:title, "編集") %>
+<% provide(:button_text, "保存") %>
+
+<div class="container">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title">編集</h1>
+          <p class="lead blog-description"><%= @user.name %> 編集</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <%= render 'form' %>
+
+        <div class="gravatar_edit">
+          <%= gravatar_for @user %>
+          <a href="http://gravatar.com/emails" target="_blank" rel="noopener" class="btn btn-primary">change</a>
+        </div>
+
+      </div>
+    </div>
+</div>
