@@ -29,6 +29,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  # サンプルのユーザーを追加
+  gem 'faker', '1.7.3'
 end
 
 group :development do
