@@ -29,7 +29,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rspec-rails'
+  # gem 'rspec-rails'
   gem 'factory_girl_rails'
   # サンプルのユーザーを追加
   gem 'faker', '1.7.3'
