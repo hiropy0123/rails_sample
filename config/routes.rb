@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # RESTful resources
   resources :users
-  resources :accout_activations, only: [:edit]
+  resources :account_activations, only: [:edit]
 
   # rootは最後に記述する
   root 'static_pages#home'
