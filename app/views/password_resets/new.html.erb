@@ -1,0 +1,34 @@
+<% provide(:title, "パスワードリセット") %>
+
+<div class="container">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="blog-header">
+        <div class="container">
+          <h1 class="blog-title mb-4">パスワードリセット</h1>
+        </div>
+      </div>
+
+      <div class="container mt-5 mb-5">
+        <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+
+          <div class="form-group row">
+            <%= f.label :email, "メールアドレス", class: "col-3 col-form-label" %>
+            <div class="col-9">
+              <%= f.email_field :email, id: "inputEmail", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <%= f.submit "送信", class: "btn btn-primary" %>
+            </div>
+          </div>
+
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+</div>
