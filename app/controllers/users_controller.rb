@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   def show
     if User.find_by(id: params[:id])
       @user = User.find(params[:id])
+      @microposts = @user.microposts.paginate(page: params[:page])
     else
       # user idが実在しない場合はトップにリダイレクト
       redirect_to root_url
