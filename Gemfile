@@ -20,6 +20,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '>= 3.1.11'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+# 画像のアップロード
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog-aws',                 '2.0.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
