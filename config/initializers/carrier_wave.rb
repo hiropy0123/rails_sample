@@ -1,7 +1,15 @@
 # CarrierWaveを通してS3を使うように修正する
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
 if Rails.env.production?
   CarrierWave.configure do |config|
     config.fog_credentials = {
+
+      config.storage :fog
+      config.fog_provider = 'fog/aws'
+
       # Amazon S3用の設定
       :provider              => 'AWS',
       :region                => ENV['S3_REGION'], # 例: 'ap-northeast-1' アジアパシフィック (東京)
