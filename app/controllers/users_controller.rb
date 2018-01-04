@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   def show
     if User.find_by(id: params[:id])
       @user = User.find(params[:id])
+      @microposts = @user.microposts.paginate(page: params[:page])
     else
       # user idが実在しない場合はトップにリダイレクト
       redirect_to root_url
@@ -62,15 +63,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
-
-    # ログイン済みユーザーかどうか確認
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
     end
 
     # 正しいユーザーかどうか確認（他人のユーザー情報を操作させない）
