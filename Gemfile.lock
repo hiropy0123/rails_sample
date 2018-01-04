@@ -61,7 +61,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    carrierwave (1.1.0)
+    carrierwave (1.2.2)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -147,7 +147,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_magick (4.7.0)
+    mini_magick (4.8.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
@@ -284,18 +284,18 @@ DEPENDENCIES
   bootstrap-will_paginate (= 1.0.0)
   byebug
   capybara (~> 2.13)
-  carrierwave (= 1.1.0)
+  carrierwave
   coffee-rails (~> 4.2)
   factory_girl_rails
   faker (= 1.7.3)
-  fog-aws (= 2.0.0)
+  fog-aws
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   holder_rails (>= 2.9.3)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  mini_magick (= 4.7.0)
+  mini_magick
   minitest-reporters (= 1.1.14)
   pg (= 0.20.0)
   popper (~> 0.4.0)
