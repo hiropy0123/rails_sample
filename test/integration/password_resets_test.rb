@@ -8,6 +8,12 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
   end
 
   test "password resets" do
+=begin
+Error:PasswordResetsTest#test_password_resets: NoMethodError: undefined method 'email' for nil:NilClass
+test/integration/password_resets_test.rb:18:in 'block' in <class:PasswordResetsTest>
+# TODO: あとでテスト
+=end
+
     get new_password_reset_path
     assert_template 'password_resets/new'
     # メールアドレスが無効
