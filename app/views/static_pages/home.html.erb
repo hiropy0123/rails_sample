@@ -55,6 +55,30 @@
 
 <div class="container marketing">
 
+  <% if logged_in? %>
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="">Microposts Feed</h2>
+      <p class="lead">Here's your Microposts...</p>
+      <%= render 'shared/feed' %>
+    </div>
+    <aside class="col-md-5">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <% else %>
+
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
@@ -82,27 +106,6 @@
 
   <hr class="featurette-divider">
 
-  <% if logged_in? %>
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="">Microposts Feed</h2>
-      <p class="lead">Here's your Microposts...</p>
-      <%= render 'shared/feed' %>
-    </div>
-    <aside class="col-md-5">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <% end %>
-
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
       <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
@@ -128,5 +131,7 @@
   <hr class="featurette-divider">
 
   <!-- /END THE FEATURETTES -->
+
+  <% end %>
 
 </div><!-- /.container -->
