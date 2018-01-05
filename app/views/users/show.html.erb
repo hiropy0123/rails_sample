@@ -1,10 +1,19 @@
 <% provide(:title, @user.name) %>
 
 <div class="container">
-  <h1 class="name"><%= @user.name %></h1>
-  <figure class="avatar">
-    <%= gravatar_for @user, size: 120 %>
-  </figure>
+    <div class="d-flex align-items-center mb-3">
+
+      <figure class="avatar mr-4">
+        <%= gravatar_for @user, size: 120 %>
+      </figure>
+      <h1 class="name"><%= @user.name %></h1>
+
+    </div>
+    <%= render 'follow_form' if logged_in? %>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+
   <table class="table table-striped">
   <thead>
     <tr>
